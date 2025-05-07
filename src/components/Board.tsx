@@ -4,14 +4,15 @@ import WordRow from "./WordRow";
 import "./Board.css";
 import type { GameState } from "../enums";
 import EndGameScreen from "./EndGameScreen";
+import { getRandomWord } from "../utils";
 
 export default function Board() {
   const [gameState, setGameState] = useState<GameState>("inprogress");
   const [guesses, setGuesses] = useState<string[]>([]);
   const [wordCurrentlyGuessing, setWordCurrentlyGuessing] = useState("");
+  const [wordToGuess, setWordToGuess] = useState(getRandomWord());
 
   const TOTAL_ROUNDS = 5;
-  const wordToGuess = "boop";
 
   useEffect(() => {
     const handleGuess = () => {
@@ -54,6 +55,7 @@ export default function Board() {
     setGameState("inprogress");
     setGuesses([]);
     setWordCurrentlyGuessing("");
+    setWordToGuess(getRandomWord());
   };
 
   return (
