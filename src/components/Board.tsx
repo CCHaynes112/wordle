@@ -14,6 +14,12 @@ export default function Board() {
   const wordToGuess = "boop";
 
   useEffect(() => {
+    const handleGuess = () => {
+      console.log("Handling guess...");
+      setGuesses((prev) => [...prev, wordCurrentlyGuessing]);
+      setWordCurrentlyGuessing("");
+    };
+
     const handleKeyDown = (event: KeyboardEvent) => {
       const keyInRegex = /^[a-zA-Z]$/.test(event.key);
       if (keyInRegex && wordCurrentlyGuessing.length < wordToGuess.length) {
@@ -44,12 +50,6 @@ export default function Board() {
     }
   }, [guesses]);
 
-  const handleGuess = () => {
-    console.log("Handling guess...");
-    setGuesses((prev) => [...prev, wordCurrentlyGuessing]);
-    setWordCurrentlyGuessing("");
-  };
-
   const onPlayAgain = () => {
     setGameState("inprogress");
     setGuesses([]);
@@ -75,7 +75,11 @@ export default function Board() {
           </div>
         </>
       )}
-      <EndGameScreen gameState={gameState} wordToGuess={wordToGuess} onPlayAgain={onPlayAgain} />
+      <EndGameScreen
+        gameState={gameState}
+        wordToGuess={wordToGuess}
+        onPlayAgain={onPlayAgain}
+      />
     </>
   );
 }
