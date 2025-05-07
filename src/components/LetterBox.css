@@ -1,0 +1,23 @@
+.letter-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  font-weight: bolder;
+  width: 100px;
+  height: 100px;
+  background-color: #b29f9f;
+  border-radius: 5px;
+}
+
+.letter-box-full-match {
+    background: rgb(35 176 19);
+}
+
+.letter-box-wrong-location {
+    background: rgb(212 189 15);
+}
+
+.letter-box-full-wrong {
+    background: #5b5252;
+}
