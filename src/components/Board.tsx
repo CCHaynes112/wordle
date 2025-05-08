@@ -38,7 +38,7 @@ export default function Board() {
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, [wordCurrentlyGuessing]);
+  }, [wordCurrentlyGuessing, wordToGuess.length]);
 
   useEffect(() => {
     if (guesses.includes(wordToGuess)) {
@@ -49,7 +49,7 @@ export default function Board() {
     ) {
       setGameState("failure");
     }
-  }, [guesses]);
+  }, [guesses, wordToGuess]);
 
   const onPlayAgain = () => {
     setGameState("inprogress");

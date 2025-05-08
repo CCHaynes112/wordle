@@ -1,6 +1,6 @@
 import { wordList } from "./consts";
 
 export const getRandomWord = () => {
-    const randomNumber = Math.random() * (wordList.length - 0) + 0;
-    return wordList[randomNumber];
-  };
+  const randomIndex = Math.floor(Math.random() * wordList.length);
+  return wordList[randomIndex];
+};
