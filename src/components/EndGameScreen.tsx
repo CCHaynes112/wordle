@@ -2,6 +2,7 @@ import type { MouseEventHandler } from "react";
 import type { GameState } from "../enums";
 
 import "./EndGameScreen.css";
+import WordleButton from "./WordleButton";
 
 interface EndGameScreenProps {
   gameState: GameState;
@@ -21,9 +22,7 @@ export default function EndGameScreen(props: EndGameScreenProps) {
           </>
         )}
         {props.gameState != "inprogress" && (
-          <div className="button" onClick={props.onPlayAgain}>
-            <h3>Play Again?</h3>
-          </div>
+          <WordleButton text="Play Again?" onSubmit={props.onPlayAgain} />
         )}
       </div>
     </>

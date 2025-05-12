@@ -1,3 +1,17 @@
+.game-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+h1 {
+    margin-bottom: 10px;
+}
+
+.error-msg {
+    color: rgb(186, 55, 55);
+}
+
 .board {
     display: flex;
     flex-direction: column;
